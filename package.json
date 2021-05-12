@@ -1,0 +1,46 @@
+{
+  "name": "syntax-interpreter",
+  "version": "0.1.0",
+  "description": "A Typescript implementation of the Interpreter design pattern that solves expressions with an spreadsheet-like syntax.",
+  "keywords": [
+    "typescript",
+    "interpreter",
+    "design-patterns"
+  ],
+  "main": "dist/syntax-interpreter.umd.js",
+  "module": "dist/syntax-interpreter.es5.js",
+  "typings": "dist/types/syntax-interpreter.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "joaolucasgtr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaolucasgtr/syntax-interpreter.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joaolucasgtr/syntax-interpreter/issues"
+  },
+  "homepage": "https://github.com/joaolucasgtr/syntax-interpreter#readme",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.2",
+    "lodash.camelcase": "^4.3.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.47.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.2.4"
+  }
+}
