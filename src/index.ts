@@ -28,10 +28,10 @@ class Interpreter {
 
   constructor(model: object, dictionary?: Record<string, string>) {
     this.context = new Context(model);
-    
+
     if (dictionary) {
       Object.keys(dictionary).forEach(prop => {
-        this.dictionary.set(prop, dictionary[prop]);
+        if (dictionary[prop]) this.dictionary.set(prop, dictionary[prop]);
       });
     }
   }
