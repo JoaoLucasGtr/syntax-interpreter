@@ -51,10 +51,8 @@ class Interpreter {
   }
 
   buildList(expression: String): Array<String> {
-    // TODO: sanitize expression before send to buildTree method.
     const sanitized = expression.replace(/[(;)]/g, ' ').split(' ')?.reverse();
     const list = sanitized?.filter(i => i);
-
     return list;
   }
 
