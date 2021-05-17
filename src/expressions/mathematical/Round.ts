@@ -13,7 +13,7 @@ class Round implements IExpression {
   interpret(context: Context): number {
     const resultA = this.first.interpret(context);
     const resultB = this.second.interpret(context);
-    const number = Number(resultA.replaceAll(',', '.'));
+    const number = Number(resultA.toString().replaceAll(',', '.'));
 
     return Number.isInteger(number)
       ? number
