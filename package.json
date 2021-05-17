@@ -1,6 +1,6 @@
 {
   "name": "syntax-interpreter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Typescript implementation of the Interpreter design pattern that solves expressions with an spreadsheet-like syntax.",
   "keywords": [
     "typescript",
@@ -29,8 +29,8 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts",
-    "start": "rollup -c rollup.config.ts -w",
-    "serve": "rimraf dist && parcel index.html --open"
+    "dev": "rimraf dist && parcel index.html --open",
+    "start": "rollup -c rollup.config.ts -w"    
   },
   "devDependencies": {
     "@types/node": "^15.0.2",

@@ -60,7 +60,7 @@ class Interpreter {
     const stack = new Array<IExpression>();
     for (let item of list) {
       switch (item.toLowerCase()) {
-        case this.dictionary.get('and'):
+        case this.dictionary.get('and')?.toLowerCase():
           stack.push(
             new And(
               stack.pop() as IExpression,
@@ -68,7 +68,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('equals'):
+        case this.dictionary.get('equals')?.toLowerCase():
           stack.push(
             new Equals(
               stack.pop() as IExpression,
@@ -76,7 +76,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('greaterThan'):
+        case this.dictionary.get('greaterThan')?.toLowerCase():
           stack.push(
             new GreaterThan(
               false,
@@ -85,7 +85,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('greaterThanEquals'):
+        case this.dictionary.get('greaterThanEquals')?.toLowerCase():
           stack.push(
             new GreaterThan(
               true,
@@ -94,7 +94,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('if'):
+        case this.dictionary.get('if')?.toLowerCase():
           stack.push(
             new If(
               stack.pop() as IExpression,
@@ -103,7 +103,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('lesserThan'):
+        case this.dictionary.get('lesserThan')?.toLowerCase():
           stack.push(
             new LesserThan(
               false,
@@ -112,7 +112,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('lesserThanEquals'):
+        case this.dictionary.get('lesserThanEquals')?.toLowerCase():
           stack.push(
             new LesserThan(
               true,
@@ -121,7 +121,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('or'):
+        case this.dictionary.get('or')?.toLowerCase():
           stack.push(
             new Or(
               stack.pop() as IExpression,
@@ -129,7 +129,7 @@ class Interpreter {
             )
           )
           break;
-        case this.dictionary.get('division'):
+        case this.dictionary.get('division')?.toLowerCase():
           stack.push(
             new Div(
               stack.pop() as IExpression,
@@ -137,7 +137,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('module'):
+        case this.dictionary.get('module')?.toLowerCase():
           stack.push(
             new Mod(
               stack.pop() as IExpression,
@@ -145,7 +145,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('multiplication'):
+        case this.dictionary.get('multiplication')?.toLowerCase():
           stack.push(
             new Mult(
               stack.pop() as IExpression,
@@ -153,7 +153,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('round'):
+        case this.dictionary.get('round')?.toLowerCase():
           stack.push(
             new Round(
               stack.pop() as IExpression,
@@ -161,7 +161,7 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('subtraction'):
+        case this.dictionary.get('subtraction')?.toLowerCase():
           stack.push(
             new Sub(
               stack.pop() as IExpression,
@@ -169,14 +169,14 @@ class Interpreter {
             )
           );
           break;
-        case this.dictionary.get('sum'):
+        case this.dictionary.get('sum')?.toLowerCase():
           stack.push(
             new Sum(
               stack.pop() as IExpression,
               stack.pop() as IExpression)
           );
           break;
-        case this.dictionary.get('now'):
+        case this.dictionary.get('now')?.toLowerCase():
           stack.push(new Now())
           break;
         default:
