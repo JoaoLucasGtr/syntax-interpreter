@@ -1,6 +1,6 @@
 {
   "name": "syntax-interpreter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Typescript implementation of the Interpreter design pattern that solves expressions with an spreadsheet-like syntax.",
   "keywords": [
     "typescript",
