@@ -1,5 +1,6 @@
 import { Context } from '../../Context';
 import { IExpression } from '../../IExpression';
+import { parseBool } from '../../utils';
 
 class If implements IExpression {
   condition: IExpression;
@@ -20,8 +21,8 @@ class If implements IExpression {
     const result = this.condition.interpret(context);
     const resultTrue = this.ifTrue.interpret(context);
     const resultFalse = this.ifFalse?.interpret(context);
-
-    const boolean = Boolean(result);
+    const boolean = parseBool(result);
+    
     return boolean ? resultTrue : resultFalse || false;
   }
 }

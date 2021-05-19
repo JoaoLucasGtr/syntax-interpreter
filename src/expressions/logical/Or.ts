@@ -1,5 +1,6 @@
 import { Context } from '../../Context';
 import { IExpression } from '../../IExpression';
+import { parseBool } from '../../utils';
 
 class Or implements IExpression {
   first: IExpression;
@@ -14,8 +15,8 @@ class Or implements IExpression {
     const resultA = this.first.interpret(context);
     const resultB = this.second.interpret(context);
 
-    const booleanA = Boolean(resultA);
-    const booleanB = Boolean(resultB);
+    const booleanA = parseBool(resultA);
+    const booleanB = parseBool(resultB);
 
     return booleanA || booleanB;
   }
